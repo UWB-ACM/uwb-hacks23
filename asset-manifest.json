@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/uwb-hacks23/static/css/main.a6fc7f23.css",
+    "main.js": "/uwb-hacks23/static/js/main.01909199.js",
+    "static/js/787.3a400261.chunk.js": "/uwb-hacks23/static/js/787.3a400261.chunk.js",
+    "static/media/sustainability.png": "/uwb-hacks23/static/media/sustainability.5e47df362dc60556283b.png",
+    "static/media/education.png": "/uwb-hacks23/static/media/education.2195afb72d59d608a045.png",
+    "static/media/game_controller.png": "/uwb-hacks23/static/media/game_controller.306ee460487d69266963.png",
+    "index.html": "/uwb-hacks23/index.html",
+    "main.a6fc7f23.css.map": "/uwb-hacks23/static/css/main.a6fc7f23.css.map",
+    "main.01909199.js.map": "/uwb-hacks23/static/js/main.01909199.js.map",
+    "787.3a400261.chunk.js.map": "/uwb-hacks23/static/js/787.3a400261.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6fc7f23.css",
+    "static/js/main.01909199.js"
+  ]
+}
