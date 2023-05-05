@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/uwb-hacks23/static/css/main.e324ab71.css",
-    "main.js": "/uwb-hacks23/static/js/main.75adaa4a.js",
+    "main.css": "/uwb-hacks23/static/css/main.1d7a48ab.css",
+    "main.js": "/uwb-hacks23/static/js/main.2a77a177.js",
     "static/js/977.4288c011.chunk.js": "/uwb-hacks23/static/js/977.4288c011.chunk.js",
     "static/js/787.3a400261.chunk.js": "/uwb-hacks23/static/js/787.3a400261.chunk.js",
     "static/media/entertainment.png": "/uwb-hacks23/static/media/entertainment.4abac56d99a70137205e.png",
@@ -9,13 +9,13 @@
     "static/media/education.png": "/uwb-hacks23/static/media/education.e4d1548e013251ed5171.png",
     "static/media/Code_of_Conduct.pdf": "/uwb-hacks23/static/media/Code_of_Conduct.3935d5e488836e006de9.pdf",
     "index.html": "/uwb-hacks23/index.html",
-    "main.e324ab71.css.map": "/uwb-hacks23/static/css/main.e324ab71.css.map",
-    "main.75adaa4a.js.map": "/uwb-hacks23/static/js/main.75adaa4a.js.map",
+    "main.1d7a48ab.css.map": "/uwb-hacks23/static/css/main.1d7a48ab.css.map",
+    "main.2a77a177.js.map": "/uwb-hacks23/static/js/main.2a77a177.js.map",
     "977.4288c011.chunk.js.map": "/uwb-hacks23/static/js/977.4288c011.chunk.js.map",
     "787.3a400261.chunk.js.map": "/uwb-hacks23/static/js/787.3a400261.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e324ab71.css",
-    "static/js/main.75adaa4a.js"
+    "static/css/main.1d7a48ab.css",
+    "static/js/main.2a77a177.js"
   ]
 }
