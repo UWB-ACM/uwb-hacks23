@@ -59,16 +59,16 @@ function TrackCard(props) {
   return (
     <div className="relative w-80 h-96 mx-10 mt-10 mb-12" onClick={handleClick}>
       <div
-        className={`absolute h-full w-full left-2 top-2 bg-light-purple  rounded-lg  transition-all duration-500 transform border-2 ${bottomZ} ${bottomY} ${bottomX} cursor-pointer`}
+        className={`absolute h-full w-full left-2 top-2 bg-black  rounded-lg  transition-all duration-500 transform border-2 ${bottomZ} ${bottomY} ${bottomX} cursor-pointer`}
       >
         <div className="flex h-full w-full  rounded-xl p-4 ">
-                <div className="font-normal text-xl text-center text-black mt-2">{props.children}</div>
+                <div className="font-normal text-xl text-center text-light-purple mt-2">{props.children}</div>
         </div>
       </div>
       <div
         className={`absolute h-full w-full rounded-lg bg-light-gray hover:bg-opacity-80 transition-all duration-500 transform border-2 ${topY} ${topX} cursor-pointer`}
       >
-        <div className="flex flex-col items-center justify-center h-full w-full  rounded-xl p-4 ">
+        <div className="bg-black flex flex-col items-center justify-center h-full w-full  rounded-xl p-4 ">
                 <div className="font-semibold text-3xl">{props.cardTitle}</div>
                 <img className="h-full w-full rounded-xl object-contain " src={props.backgroundImage} alt="" />
         </div>

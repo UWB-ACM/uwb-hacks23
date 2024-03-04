@@ -1,67 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Marquee from "react-fast-marquee";
+import pawLogo from './media/paw.png';
 
 function CountdownTimer() {
-    const [countdown, setCountdown] = useState(Date.parse('2023-05-05T00:00:00') - Date.now());
-    const [endTimer, setEndTimer] = useState(Date.parse('2023-05-07T11:00:00') - Date.now());
+    // Set the start date for the hackathon
+    const startDate = new Date('2024-04-26T00:00:00Z');
+    // Calculate the difference between the current time and the start date
+    const [countdown, setCountdown] = useState(startDate - Date.now());
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCountdown(countdown - 1000);
-            setEndTimer(endTimer - 1000);
+            setCountdown(startDate - Date.now());
         }, 1000);
 
+        // Clean up the interval on component unmount
         return () => clearInterval(interval);
-    }, [countdown, endTimer]);
+    }, []);
 
+    // Convert the countdown from milliseconds to days, hours, and minutes
     const days = Math.floor(countdown / (1000 * 60 * 60 * 24));
     const hours = Math.floor((countdown / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((countdown / (1000 * 60)) % 60);
 
-    const endDays = Math.floor(endTimer / (1000 * 60 * 60 * 24));
-    const endHours = Math.floor((endTimer / (1000 * 60 * 60)) % 24);
-    const endMinutes = Math.floor((endTimer / (1000 * 60)) % 60);
-
+    // Control the Marquee play state
     const [playMarquee, setPlayMarquee] = useState(true);
 
     function handleMarquee() {
         setPlayMarquee(false);
-        setTimeout(()=> {
+        setTimeout(() => {
             setPlayMarquee(true);
         }, 10);
     }
 
-    useEffect(() => {
-
-    }, [playMarquee]);
-
-    /*
-    if (countdown < 0) {
-        if (endTimer < 0) {
-            return (
-                <div className="countdown-timer-box py-2">
-                    <Marquee play={playMarquee} gradient={false} speed={Math.log(window.screen.width) *10} onCycleComplete={handleMarquee}>Hacking Ends! Thank You! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Marquee>
-                </div>
-            );
-        }
-        else {
-            return (
-                <div className="countdown-timer-box py-2">
-                    <Marquee play={playMarquee} gradient={false} speed={Math.log(window.screen.width) *10} onCycleComplete={handleMarquee}>{endDays} days, {endHours} hours, {endMinutes} minutes until Hacking ends! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Marquee>
-                </div>
-            );
-        }
-    }
+    // Display different messages based on whether the hackathon has started
+    if (countdown <= 0) {
+        // Hackathon has started
+        return (
             <div className="countdown-timer-box py-2">
-            <Marquee play={playMarquee} gradient={false} speed={Math.log(window.screen.width) *10} onCycleComplete={handleMarquee}>{days} days, {hours} hours, {minutes} minutes until Hacking begins! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Marquee>
-        </div>
-    */
-    return (
-        <div className="countdown-timer-box py-2">
-            <Marquee play={playMarquee} gradient={false} speed={Math.log(window.screen.width) *10} onCycleComplete={handleMarquee}>Hacking has ended! Thanks for attending! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Marquee>
-        </div>
-    );
+                <Marquee play={playMarquee} gradient={false} speed={50} onCycleComplete={handleMarquee}>
+                    Hackathon is underway! Happy hacking! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </Marquee>
+            </div>
+        );
+    } else {
+        // Countdown to hackathon start
+        return (
+            <div className="countdown-timer-box py-2">
+                <Marquee play={playMarquee} gradient={false} speed={50} onCycleComplete={handleMarquee}>
+                    {days} days until Hacking begins
+                    <img src={pawLogo} alt="Paw" className="paw-icon" /> {/* Add this line */}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </Marquee>
+            </div>
+        );
+    }
 }
 
 export default CountdownTimer;

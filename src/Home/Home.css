@@ -1,9 +1,9 @@
 .countdown-timer-box {
-  background: linear-gradient(to right, #ff7f50, #ffd801);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
+  background: linear-gradient(to right, #4d9eff, #18e4ec);
+  font-family: 'Arial', sans-serif;
+  font-size: 21px;
   font-weight: bold;
-  color: mediumpurple;
+  color: #360a62;
   text-align: center;
 }
 
@@ -25,7 +25,23 @@
   --violet: #ac82ff;
   --yellow: #ffd801;
   --orange: #ff7f50;
+  --futuristic-dark-blue: #0a0f0d;
+  --futuristic-cyan: #7efeff;
+  --futuristic-purple: #8a3ff5;
+  --futuristic-violet: #b36fff;
+  --futuristic-pink: #ff218e;
+  --futuristic-bright-blue: #4d9eff;
+  --light-gray: #96a1a7;
+  --black: #000000;
+  --lighterblack: #312f2f;
+  --googray: #145db6;
+  --pink: #eb37c5;
+  --purple: #360a62;
+  --blue: #2503fb;
+  --cyan: #18e4ec;
+  --brighterpurp: #ad50f0;
 }
+
 
 @keyframes background-pan {
   from {
@@ -38,7 +54,9 @@
 }
 
 @keyframes scale {
-  from, to {
+
+  from,
+  to {
     transform: scale(0);
   }
 
@@ -57,12 +75,12 @@
   }
 }
 
-h1 > .magic {
+h1>.magic {
   display: inline-block;
   position: relative;
 }
 
-h1 > .magic > .magic-star {
+h1>.magic>.magic-star {
   --size: clamp(20px, 1.5vw, 30px);
 
   animation: scale 700ms ease forwards;
@@ -74,26 +92,24 @@ h1 > .magic > .magic-star {
   width: var(--size);
 }
 
-h1 > .magic > .magic-star > svg {
+h1>.magic>.magic-star>svg {
   animation: rotate 1000ms linear infinite;
   display: block;
   opacity: 0.7;
 }
 
-h1 > .magic > .magic-star > svg > path {
+h1>.magic>.magic-star>svg>path {
   fill: var(--violet);
 }
 
-h1 > .magic > .magic-text{
+h1>.magic>.magic-text {
   animation: background-pan 3s linear infinite;
-  background: linear-gradient(
-    to right,
-    var(--purple),
-    var(--violet),
-    var(--orange),
-    var(--yellow),
-    var(--purple)
-  );
+  background: linear-gradient(to right,
+      var(--purple),
+      var(--violet),
+      var(--orange),
+      var(--yellow),
+      var(--purple));
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -111,10 +127,13 @@ h1 > .magic > .magic-text{
 .schedule.animated:nth-child(2) {
   animation-delay: 0.5s;
 }
+
 .schedule.animated:nth-child(3) {
   animation-delay: 1s;
 }
+
 @media (max-width: 640px) {
+
   .schedule.animated:nth-child(2),
   .schedule.animated:nth-child(3) {
     animation-delay: 0s;
@@ -127,8 +146,73 @@ h1 > .magic > .magic-text{
     opacity: 50%;
     transform: translateX(-100px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: row; /* Align children side by side */
+  align-items: center; /* Center children vertically */
+  justify-content: center; /* Center children horizontally */
+  min-height: 90vh; /* Adjust to desired height, this is less than full viewport height */
+  background-color: #360a62; /* Your chosen background color */
+  background-image: url('media/grid.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Adjust .centered-image if it's still in use or replace with .husky-image */
+.husky-image {
+  max-width: 30%; /* Adjust the size of your image as needed */
+  margin-right: 2rem; /* Adds some space between the image and the text */
+}
+
+.text-container {
+  text-align: left; /* Aligns the text to the left */
+}
+
+
+.theme-title {
+  font-size: 4rem; /* Large text for the theme */
+  color: #FFFFFF; /* White text color */
+  margin: 0; /* Removes default margins */
+  font-family: 'Stacker', sans-serif;
+}
+
+.theme-location-time {
+  font-size: 2rem; /* Large text for location and time */
+  color: #FFFFFF; /* White text color */
+  margin: 0; /* Removes default margins */
+  font-family: 'Stacker', sans-serif;
+}
+
+.theme-title {
+  font-size: 4rem; /* Large text for the theme */
+  background: linear-gradient(
+    to right,
+    var(--pink), 
+    var(--violet), 
+    var(--futuristic-bright-blue), /* Increased the lighter color area */
+    var(--cyan),
+    var(--futuristic-bright-blue), /* Repeat to ensure visibility */
+    var(--violet),
+    var(--pink)
+  );
+  -webkit-background-clip: text;
+  color: transparent; /* Make the text transparent to show the gradient */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Fallback for older browsers */
+  display: inline-block; /* Required for gradients on text */
+}
+
+.paw-icon {
+  height: 40px; /* Adjust the size as needed */
+  width: auto; /* To maintain the aspect ratio */
+  margin-left: 10px; /* Add some space between the text and the image */
+  vertical-align: middle; /* Align it with the text */
 }
