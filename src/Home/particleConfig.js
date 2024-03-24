@@ -631,7 +631,7 @@ const options = {
     "autoPlay": true,
     "background": {
         "color": {
-            "value": "#360a62"
+            "value": "#fff"
         },
         "image": "",
         "position": "50% 50%",
@@ -643,7 +643,7 @@ const options = {
         "composite": "destination-out",
         "cover": {
             "color": {
-                "value": "#360a62"
+                "value": "#fff"
             },
             "opacity": 1
         },

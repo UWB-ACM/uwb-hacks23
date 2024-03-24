@@ -1,32 +1,22 @@
 import React from 'react';
-import pawImage from './media/paw.png'; // Adjust the path as necessary
-import avanade from './media/avanade.png'; // Adjust the path as necessary
-import muirai from './media/muir-logo-light.png';
+import './Home.css';
+import EarthHacks from './earthhacks.png'
+import SponsorCard from './SponsorCard';
 
-// Update this array with your actual sponsor data
-const sponsors = [
-  { id: 1, name: "Sponsor One", logo: avanade }, // Example sponsor
-  { id: 2, name: "Sponsor Two", logo: muirai},
-  // Add more sponsors as needed
-];
-
-const Sponsors = () => {
-  return (
-    <div className="sponsors-container">
-      <div className="sponsor-header flex items-center justify-center my-10">
-        <img src={pawImage} alt="Husky Paw" className="husky-paw" />
-        <h2 className="text-4xl sm:text-6xl font-bold tracking-tight mx-5">Thank you to our sponsors</h2>
-        <img src={pawImage} alt="Husky Paw" className="husky-paw" />
-      </div>
-      <div className="flex flex-wrap justify-center items-center">
-        {sponsors.map((sponsor) => (
-          <div key={sponsor.id} className="sponsor-logo-container m-5">
-            <img src={sponsor.logo} alt={sponsor.name} className="sponsor-logo h-48 w-80 object-contain" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+function Sponsors() {
+    return (
+        <>
+            <div className="rounded-xl overflow-hidden my-5" id="sponsorSection">
+                <div className="font-SecularOne text-6xl text-center mt-3 mb-2">
+                    Sponsors
+                </div>
+                
+                <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap overflow-hidden">
+                    <SponsorCard backgroundImage={EarthHacks}> As we start to move away from quarantine, how can we ensure people are being environmentally conscious when engaging in outdoor activities? Look into ways sustainability can be maintained now that gatherings and events are moving in-person. </SponsorCard>
+                </div>
+            </div>
+        </>
+    );
+}
 
 export default Sponsors;
