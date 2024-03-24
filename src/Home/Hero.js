@@ -3,6 +3,7 @@ import "./Home.css"
 import CountDownTimer from "./CountDownTimer";
 import { useEffect } from "react";
 import hacker from './media/cropped_husky.PNG';
+import clubLogos from './media/club_logos.png';
 
 export default function Hero() {
     useEffect(() => {
@@ -67,12 +68,31 @@ export default function Hero() {
     //         </div>
     //     </>
     // );
+    // return (
+    //     <>
+    //         <CountDownTimer />
+    //         <div className="hero-container" id="heroSection">
+    //             <img src={hacker} alt="Husky Hacker" className="husky-image" />
+    //             <div className="text-container">
+    //                 <h1 className="theme-title">UWB HACKS A.I.</h1>
+    //                 <p className="theme-location-time">April 26 at The ARC</p>
+    //             </div>
+    //         </div>
+    //     </>
+    // );
+
     return (
         <>
             <CountDownTimer />
             <div className="hero-container" id="heroSection">
                 <img src={hacker} alt="Husky Hacker" className="husky-image" />
                 <div className="text-container">
+                    <div className="upper-content-container">
+                        <div className="club-logos-and-presents">
+                            <img src={clubLogos} alt="Club Logos" className="club-logos" />
+                            <p className="presents-text">Presents...</p>
+                        </div>
+                    </div>
                     <h1 className="theme-title">UWB HACKS A.I.</h1>
                     <p className="theme-location-time">April 26 at The ARC</p>
                 </div>

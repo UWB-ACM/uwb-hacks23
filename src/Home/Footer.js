@@ -4,13 +4,13 @@ import {NavLink, useLocation} from "react-router-dom";
 //import {Link} from "react-scroll";
 export default function Footer() {
     const location = useLocation();
-    if (location.pathname !== "/uwb-hacks23" && location.pathname !== "/uwb-hacks23/") {
+    if (location.pathname !== "/uwb-hacks24" && location.pathname !== "/uwb-hacks24/") {
         return <></>
     }
 
     return (
         <footer 
-        className = 'bg-gradient-to-r from-light-purple via-purple to-light-purple'
+        className = 'bg-gradient-to-r from-purple via-deep-purple to-purple'
         style={{
             height: 'auto',
             display: 'flex',
@@ -38,7 +38,7 @@ export default function Footer() {
                 <Link to="schedule"
                     smooth={'easeInOutQuint'}
                     duration={200}>
-                    <div>Schedule</div>
+                    <div>Schedule</div>\begin{pmatrix}5\\ 1\\ 4\end{pmatrix}
                 </Link>
                 <Link to="faqSection"
                     smooth={'easeInOutQuint'}
@@ -46,41 +46,43 @@ export default function Footer() {
                     <div>FAQ</div>            
                 </Link>
             </div>*/}
-            <div style={{margin: '55px 9% 0 9%',}}>
+            <div style={{margin: '30px 9% 5px 9%',}}>
                 <div 
-                className='font-SecularOne'
+                className="font-stacker font-semibold"
                 style={{
                     color: 'white',
                     fontSize: '24px',
-                    marginBottom: '19px',
+                    marginBottom: '30px',
                     opacity: 1,
-                    textAlign: 'center',
-                    whiteSpace: 'nowrap'
+                    textAlign: 'center'
                 }}>
-                    Connect with us!
+                    <div className="text-pink h-full mt-4">
+                        Follow us for future events
+                    </div>
                 </div>
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    gap: '20px'
+                    maxWidth: '400px',
+                    margin: '0 auto'
                 }}>
-                    <NavLink to={"https://discord.gg/7jFyNVCcpH"} className="mx-auto">
-                        <FontAwesomeIcon icon={faDiscord} style={{color: "white", transform: "scale(2)"}} />
+                    <NavLink to={"https://discord.gg/yPjkrbNFqK"} className="mx-auto social-icon">
+                        <FontAwesomeIcon icon={faDiscord} style={{color: "#4ddbff", transform: "scale(2.3)"}} />
                     </NavLink>
-                    <NavLink to={"https://www.instagram.com/uwb_acm/"} className="mx-auto">
-                        <FontAwesomeIcon icon={faInstagram} style={{color: "white", transform: "scale(2)"}} />
+                    <NavLink to={"https://www.instagram.com/uwb_acm/"} className="mx-auto social-icon">
+                        <FontAwesomeIcon icon={faInstagram} style={{color: "#ff33cc", transform: "scale(2.3)"}} />
                     </NavLink>
-                    <NavLink to={"https://www.facebook.com/uwbacm/"} className="mx-auto">
-                        <FontAwesomeIcon icon={faFacebook} style={{color: "white", transform: "scale(2)"}} />
+                    <NavLink to={"https://www.facebook.com/uwbacm/"} className="mx-auto social-icon">
+                        <FontAwesomeIcon icon={faFacebook} style={{color: "#4d94ff", transform: "scale(2.3)"}} />
                     </NavLink>
-                    <NavLink to={"https://www.linkedin.com/company/uwb-acm-club/"} className="mx-auto">
-                        <FontAwesomeIcon icon={faLinkedin} style={{color: "white", transform: "scale(2)"}} />
+                    <NavLink to={"https://www.linkedin.com/company/uwb-acm-club/"} className="mx-auto social-icon">
+                        <FontAwesomeIcon icon={faLinkedin} style={{color: "#4db8ff", transform: "scale(2.3)"}} />
                     </NavLink>
                 </div>
             </div>
             {/* The contact column is a placeholder column for now 
             <div style={{margin: '55px 9% 0 9%', color: 'white'}}>
-                <NavLink to="/uwb-hacks23/Contact" className='hover:text-white'>
+                <NavLink to="/uwb-hacks24/Contact" className='hover:text-white'>
                     <div className='font-SecularOne' style={{fontSize: '24px'}}>Contact Us</div>  
                     <textarea
                         style={{
@@ -103,6 +105,10 @@ export default function Footer() {
                         flex-direction: column;
                         align-items: center;
                     }
+                }
+
+                .social-icon:hover {
+                    transform: scale(1.5);
                 }
                 `}
             </style>

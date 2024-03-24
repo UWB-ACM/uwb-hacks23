@@ -9,6 +9,7 @@ import ScrollToTopButton from "./ScrollToTopButton"
 import Hero from "./Hero";
 import About from "./About";
 import Schedule from "./Schedule";
+import Sponsors from "./Sponsors";
 
 function Home() {
     const particlesInit = useCallback(async (engine) => {
@@ -19,6 +20,7 @@ function Home() {
             <Hero />
             <div className="w-full Home">
                 <About/>
+                <Sponsors/>
                 <Tracks />
                 <Schedule />
                 <FAQ />

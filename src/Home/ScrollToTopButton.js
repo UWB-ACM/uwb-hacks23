@@ -57,7 +57,7 @@ function ScrollToTopButton() {
   return (
     <button
       type="button"
-      className={`fixed z-20 bottom-4 right-4 bg-light-purple border-1 border-black text-white rounded-full p-2 hover:bg-yellow
+      className={`fixed z-20 bottom-4 right-4 bg-pink border-1 border-black text-white rounded-full p-2 hover:bg-yellow
       ${
         showButton ? 'opacity-100' : 'opacity-0'
       }`}
